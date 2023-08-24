@@ -19,10 +19,10 @@ public class Linea implements  Comparable<Linea>{
         this.yf=generador();
         logger.info("X:"+ this.xf+" Y :"+this.yf);
         //System.out.println("X:"+ this.xf+" Y :"+this .yf);
-        logger.info("A :"+a);
-        logger.info("A :"+b);
         a = Math.abs(xf-335);
         b = Math.abs(yf-335);
+        logger.info("A :"+a);
+        logger.info("B :"+b);
         tamano= (int) Math.sqrt((a*a)+(b*b));
         observado = new PropertyChangeSupport(this);
 
