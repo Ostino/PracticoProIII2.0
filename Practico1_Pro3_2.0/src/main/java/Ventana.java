@@ -38,12 +38,12 @@ public class Ventana extends JFrame {
         reset.addActionListener(e -> {
             modelo.Formatear_arreglo();
             modelo.Anadir_lineas();
-            repaint();
+           // repaint();
         });
         play.addActionListener(e -> {
             modelo.ordenar_arreglo();
             logger.info("Se ordeno el arreglo");
-            repaint();
+            //repaint();
         });
         check.addActionListener(e -> {
             if (modelo.Check() == true){

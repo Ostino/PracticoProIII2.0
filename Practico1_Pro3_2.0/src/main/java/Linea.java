@@ -18,14 +18,12 @@ public class Linea implements  Comparable<Linea>{
         this.xf=generador();
         this.yf=generador();
         logger.info("X:"+ this.xf+" Y :"+this.yf);
-        //System.out.println("X:"+ this.xf+" Y :"+this .yf);
         a = Math.abs(xf-335);
         b = Math.abs(yf-335);
         logger.info("A :"+a);
         logger.info("B :"+b);
         tamano= (int) Math.sqrt((a*a)+(b*b));
         observado = new PropertyChangeSupport(this);
-
     }
     public void addObserver(PropertyChangeListener observador) {
         observado.addPropertyChangeListener(observador);
@@ -34,15 +32,9 @@ public class Linea implements  Comparable<Linea>{
         Random random = new Random();
         return random.nextInt(50,600) + 1;
     }
-
     public Linea[] getArreglo() {
         return arreglo;
     }
-
-    public void setArreglo(Linea[] arreglo) {
-        this.arreglo = arreglo;
-    }
-
     public  void Anadir_lineas () {
         Linea[] oldarreglo = this.arreglo;
         for (int i = 0; i < arreglo.length; i++) {
@@ -57,10 +49,12 @@ public class Linea implements  Comparable<Linea>{
         for (int i = 0; i < arreglo.length; i++) {
             arreglo[i] = null;
         }
+        logger.info("Se han eliminado las lineas");
         observado.firePropertyChange("Arreglo",oldarreglo, this.arreglo);
     }
     public  void ordenar_arreglo (){
         Arrays.sort(arreglo);
+        observado.firePropertyChange("Arreglo",true, false);
     }
     public boolean Check (){
         for (int i = 0; i < arreglo.length-1; i++) {
