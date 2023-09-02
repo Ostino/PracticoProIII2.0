@@ -42,7 +42,7 @@ public class Linea implements  Comparable<Linea>{
             arreglo[i] = linea;
         }
         logger.info("Se han añadido las lineas");
-        observado.firePropertyChange("Arreglo",oldarreglo, this.arreglo);
+        observado.firePropertyChange("Arreglo",true, false);
     }
     public void Formatear_arreglo() {
         Linea[] oldarreglo = this.arreglo;
@@ -50,7 +50,7 @@ public class Linea implements  Comparable<Linea>{
             arreglo[i] = null;
         }
         logger.info("Se han eliminado las lineas");
-        observado.firePropertyChange("Arreglo",oldarreglo, this.arreglo);
+        observado.firePropertyChange("Arreglo",true, false);
     }
     public  void ordenar_arreglo (){
         Arrays.sort(arreglo);

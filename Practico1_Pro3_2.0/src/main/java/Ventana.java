@@ -38,12 +38,11 @@ public class Ventana extends JFrame {
         reset.addActionListener(e -> {
             modelo.Formatear_arreglo();
             modelo.Anadir_lineas();
-           // repaint();
         });
         play.addActionListener(e -> {
             modelo.ordenar_arreglo();
             logger.info("Se ordeno el arreglo");
-            //repaint();
+
         });
         check.addActionListener(e -> {
             if (modelo.Check() == true){
@@ -54,7 +53,7 @@ public class Ventana extends JFrame {
         });
     }
     public static void main(String[] args) {
-        Ventana test = new Ventana();
+      Ventana test = new Ventana();
 
     }
 }
